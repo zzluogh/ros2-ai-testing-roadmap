@@ -36,7 +36,11 @@
 
 - [完整学习路线图](./resources/learning-roadmap.md) — 102 天日计划
 - [命令速查表](./resources/commands-cheatsheet.md) — pytest / ros2 / CI 常用命令
-- [样本笔记](./samples/sample-notes.md) — Nav2 代价地图学习笔记示例
+- [样本笔记：Nav2 代价地图](./samples/sample-notes.md) — 模块一
+- [样本笔记：pytest + launch_testing 踩坑](./samples/sample-module2-pytest-ci.md) — 模块二
+- [样本笔记：QoS 静默失败 + 生命周期死锁](./samples/sample-module3-qos-lifecycle.md) — 模块三
+- [样本笔记：BLEU/RAGAS 评测踩坑](./samples/sample-module4-llm-eval.md) — 模块四
+- [样本笔记：DVC + CI/CD 排障日记](./samples/sample-module5-cicd.md) — 模块五
 
 ## 使用方式
 
