@@ -43,10 +43,10 @@
 以「场景→现象→根因→修复」为主线，附关键教训：
 
 1. [代价地图配置踩坑记录](./samples/sample-notes.md)
-2. [pytest/mock/launch_testing 测试入门](./samples/sample-module2-pytest-ci.md)
-3. [QoS/生命周期/rosbag2 进阶测试](./samples/sample-module3-qos-lifecycle.md)
+2. [pytest/mock/launch_testing 测试入门（含launch_testing卡死坑）](./samples/sample-module2-pytest-ci.md)
+3. [QoS/生命周期/rosbag2 进阶测试（含QoS静默丢消息）](./samples/sample-module3-qos-lifecycle.md)
 4. [BLEU短句零分 + RAGAS本地实现——大模型评测入门](./samples/sample-module4-llm-eval.md)
-5. [DVC/MLflow/Allure 全链路CI/CD搭建](./samples/sample-module5-cicd.md)
+5. [DVC/MLflow/Allure 全链路CI/CD搭建（含DVC command not found）](./samples/sample-module5-cicd.md)
 
 ---
 
@@ -67,12 +67,12 @@ pytest跑ROS2测试 + MMLU跑大模型评测，统一输出Allure报告，带阈
 
 | 模块 | 状态 |
 |------|------|
-| 〇、Nav2导航基础 | ✅ 核心概念已掌握 |
-| 一、传统测试基础（pytest/launch_testing/CI） | ✅ 已完成 |
-| 二、ROS2进阶测试（回调组/生命周期/QoS/rosbag2） | ✅ 已完成 |
-| 三、大模型测试（MMLU/BLEU/ROUGE/RAGAS/工具调用） | ✅ 已完成 |
-| 四、CI/CD自动化（DVC/MLflow/GitHub Actions/Allure） | ✅ 已完成 |
-| 五、具身智能测试（LLM+ROS2端到端） | 🔍 方案设计中 |
+| 一、Nav2导航基础 | ✅ 核心概念已掌握 |
+| 二、传统测试基础（pytest/launch_testing/CI） | ✅ 已完成 |
+| 三、ROS2进阶测试（回调组/生命周期/QoS/rosbag2） | ✅ 已完成 |
+| 四、大模型测试（MMLU/BLEU/ROUGE/RAGAS/工具调用） | ✅ 已完成 |
+| 五、CI/CD自动化（DVC/MLflow/GitHub Actions/Allure） | ✅ 已完成 |
+| 六、具身智能测试（LLM+ROS2端到端） | 🔍 方案设计中 |
 
 ---
 
@@ -80,32 +80,32 @@ pytest跑ROS2测试 + MMLU跑大模型评测，统一输出Allure报告，带阈
 
 > 前置：[环境准备](./modules/00-environment-setup.md)（WSL2 + ROS2 Humble + 工具链）
 
-模块〇：Nav2导航基础（第1-2周）
+模块一：Nav2导航基础（第1-2周）
 ├── 环境搭建：Ubuntu + ROS2 + Nav2
 ├── 核心概念：节点/话题/服务/动作/QoS
 ├── Nav2架构：代价地图/AMCL/行为树/规划器
 └── 理解机器人导航基本概念
-模块一：传统测试基础（第3-4周）
+模块二：传统测试基础（第3-4周）
 ├── pytest + fixture + mock
 ├── ROS2 launch_testing
 ├── 单元测试 + 集成测试
 └── CI基础：GitHub Actions
-模块二：ROS2进阶测试（第5-6周）
+模块三：ROS2进阶测试（第5-6周）
 ├── 回调组与死锁
 ├── 生命周期节点
 ├── QoS兼容性测试
 └── rosbag2回归测试
-模块三：大模型测试（第7-9周）
+模块四：大模型测试（第7-9周）
 ├── 基础指标：BLEU/ROUGE/BERTScore
 ├── 综合评测：MMLU
 ├── RAG评测：RAGAS
 └── 工具调用评测 + 压测
-模块四：CI/CD自动化（第10-11周）
+模块五：CI/CD自动化（第10-11周）
 ├── DVC数据版本控制
 ├── MLflow实验管理
 ├── 统一CI管线搭建
 └── Allure报告 + 阈值门禁
-模块五：具身智能测试（第12-16周）
+模块六：具身智能测试（第12-16周）
 ├── LLM → 中间层 → ROS2
 ├── 端到端测试方案
 ├── 失败根因自动分析（LLM辅助）
@@ -117,7 +117,7 @@ pytest跑ROS2测试 + MMLU跑大模型评测，统一输出Allure报告，带阈
 
 1. 先看"适合谁"——确认这个仓库对你有没有用
 2. 翻几篇踩坑笔记——感受一下内容质量和风格
-3. 按模块顺序学——从模块〇开始，循序渐进
+3. 按模块顺序学——从模块一开始，循序渐进
 4. 动手跑，别光看——每个demo都自己敲一遍
 5. 记笔记——用自己的话重述一遍，比看十遍教程都管用
 
@@ -126,7 +126,7 @@ pytest跑ROS2测试 + MMLU跑大模型评测，统一输出Allure报告，带阈
 ## 更新计划
 
 - 每周更新1-2篇踩坑笔记
-- 模块五（具身智能测试）持续推进，有进展就更
+- 模块六（具身智能测试）持续推进，有进展就更
 - 找到工作后会更新面试复盘和入职后的实战对比
 
 ---
