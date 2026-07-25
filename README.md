@@ -1,64 +1,135 @@
-# 测试工程师转型 AI 机器人测试 — 3 个月学习路线
+# ROS2 + AI 机器人测试 · 系统学习路线
 
-> 102 天 / 43 课 / 6 模块 —— 从 ROS2 传统测试到大模型评测 + 具身智能
+> 38岁被裁后边学边整理的转型笔记。不是教程，是一个正在进行的实验。
+> 6模块 / 持续更新中 —— 从ROS2传统测试到大模型评测+具身智能。
 
 ---
 
 ## 这是什么
 
-一份为**传统测试工程师**设计的系统化转型路线，目标是从零掌握 **ROS2 机器人测试 + 大模型评测 + CI/CD 自动化** 三项核心能力。
+一个普通测试工程师转型AI机器人测试的完整学习记录。
 
-每个模块都给出了：
-- 学习目标
-- 推荐教程链接
-- 关键概念速查
-- 实操任务和验证标准
+点进来你能拿到三样东西：
+- 🗺️ 6模块学习路线图（Nav2→ROS2测试→大模型评测→CI/CD→具身智能）
+- 🐛 5篇样本踩坑笔记（场景→现象→根因→修复，帮你省掉自己瞎摸索的时间）
+- 🧠 一套跨技术栈的通用诊断方法
 
-## 适合谁
-
-- 有 Python 基础的测试工程师，想往机器人/AI 方向转型
-- 正在学 ROS2，但不知道"测试视角"应该重点看什么
-- 想做 LLM 评测但不知道从哪入手
-
-## 课程结构
-
-| 模块 | 内容 | 课时 | 预计时间 |
-|------|------|------|---------|
-| [〇 环境准备](./modules/00-environment-setup.md) | WSL2 + ROS2 Humble + 工具链 | 2 课 | 课前完成 |
-| [一 Nav2 导航基础](./modules/01-nav2-basics.md) | 安装、架构、代价地图、AMCL、行为树 | 8 课 | 第 1-2 周 |
-| [二 传统测试基础](./modules/02-testing-fundamentals.md) | pytest/fixture/mock/CI/launch_testing | 7 课 | 第 3-4 周 |
-| [三 ROS2 进阶](./modules/03-ros2-advanced.md) | 回调组/生命周期/QoS/rosbag2/tf2/Action | 7 课 | 第 5-7 周 |
-| [四 大模型测试](./modules/04-llm-testing.md) | MMLU/BLEU/ROUGE/RAGAS/工具调用/长上下文 | 10 课 | 第 8-11 周 |
-| [五 CI/CD 自动化](./modules/05-cicd-automation.md) | DVC/MLflow/GitHub Actions/Allure/CLI 工具 | 6 课 | 第 12-14 周 |
-| [六 具身智能测试（选修）](./modules/06-embodied-ai.md) | ROS2+LLM 桥接/仿真安全/指令校验 | 5 课 | 第 15-16 周 |
-
-## 快速导航
-
-- [完整学习路线图](./resources/learning-roadmap.md) — 102 天日计划
-- [命令速查表](./resources/commands-cheatsheet.md) — pytest / ros2 / CI 常用命令
-
-以「场景→现象→根因→修复」为主线，附关键教训：
-
-- [样本笔记：Nav2 代价地图](./samples/sample-notes.md) — 模块一
-- [样本笔记：pytest + launch_testing 踩坑](./samples/sample-module2-pytest-ci.md) — 模块二
-- [样本笔记：QoS 静默失败 + 生命周期死锁](./samples/sample-module3-qos-lifecycle.md) — 模块三
-- [样本笔记：BLEU/RAGAS 评测踩坑](./samples/sample-module4-llm-eval.md) — 模块四
-- [样本笔记：DVC + CI/CD 排障日记](./samples/sample-module5-cicd.md) — 模块五
-
-## 使用方式
-
-1. **自学者**：按模块顺序推进，每课 1.5~2 小时，周末复习
-2. **选学**：直接跳到感兴趣模块——各模块相对独立
-3. **建议硬件**：8GB RAM + WSL2 Ubuntu 22.04 + Google Colab（LLM 部分）
-
-## 更新日志
-
-详见 [CHANGELOG.md](./CHANGELOG.md)
-
-## 许可证
-
-[CC BY-NC-SA 4.0](./LICENSE) — 署名-非商业使用-相同方式共享
+边做边更，成功了是经验，失败了是教训。觉得有用点个 ⭐ Star～
 
 ---
 
-> 持续更新中。如果这份路线对你有帮助，欢迎 Star / Watch 关注后续更新。
+## 适合谁 / 不适合谁
+
+✅ **适合你，如果：**
+- 有Python基础的测试工程师，想往机器人/AI方向转型
+- 30+遇到职业瓶颈、想找新方向的测试同行
+- 正在学ROS2，但不知道"测试视角"应该重点看什么
+- 想做LLM评测但不知道从哪入手
+
+❌ **不适合你，如果：**
+- 零基础，连Python和Linux都没接触过
+- 想找"30天速成拿高薪"的捷径
+- 关注的是算法开发，不是测试验证
+
+---
+
+## 快速导航
+
+- 🗺️ [完整学习路线图](./resources/learning-roadmap.md) —— 6模块学习顺序、资源清单、时间规划
+- 📋 [命令速查表](./resources/commands-cheatsheet.md) —— ROS2 / Nav2 / pytest / RAGAS 常用命令一页纸
+
+### 5篇样本踩坑笔记
+
+以「场景→现象→根因→修复」为主线，附关键教训：
+
+1. [代价地图配置踩坑记录](./samples/sample-notes.md)
+2. [pytest/mock/launch_testing 测试入门](./samples/sample-module2-pytest-ci.md)
+3. [QoS/生命周期/rosbag2 进阶测试](./samples/sample-module3-qos-lifecycle.md)
+4. [BLEU短句零分 + RAGAS本地实现——大模型评测入门](./samples/sample-module4-llm-eval.md)
+5. [DVC/MLflow/Allure 全链路CI/CD搭建](./samples/sample-module5-cicd.md)
+
+---
+
+## 两条核心管线
+
+### ROS2测试管线
+单元测试（pytest+mock）→ 集成测试（launch_testing）→ 回归测试（rosbag2）→ CI自动化（GitHub Actions）
+
+### LLM评测管线
+基础指标（BLEU/ROUGE/BERTScore）→ 综合评测（MMLU）→ RAG评测（RAGAS）→ 工具调用评测
+
+### 统一CI管线
+pytest跑ROS2测试 + MMLU跑大模型评测，统一输出Allure报告，带阈值门禁。
+
+---
+
+## 模块进度
+
+| 模块 | 状态 |
+|------|------|
+| 〇、Nav2导航基础 | ✅ 核心概念已掌握 |
+| 一、传统测试基础（pytest/launch_testing/CI） | ✅ 已完成 |
+| 二、ROS2进阶测试（回调组/生命周期/QoS/rosbag2） | ✅ 已完成 |
+| 三、大模型测试（MMLU/BLEU/ROUGE/RAGAS/工具调用） | ✅ 已完成 |
+| 四、CI/CD自动化（DVC/MLflow/GitHub Actions/Allure） | ✅ 已完成 |
+| 五、具身智能测试（LLM+ROS2端到端） | 🔍 方案设计中 |
+
+---
+
+## 完整课程结构（预计学习周期）
+模块〇：Nav2导航基础（第1-2周）
+├── 环境搭建：Ubuntu + ROS2 + Nav2
+├── 核心概念：节点/话题/服务/动作/QoS
+├── Nav2架构：代价地图/AMCL/行为树/规划器
+└── 第一个demo：让机器人在仿真里跑起来
+模块一：传统测试基础（第3-4周）
+├── pytest + fixture + mock
+├── ROS2 launch_testing
+├── 单元测试 + 集成测试
+└── CI基础：GitHub Actions
+模块二：ROS2进阶测试（第5-6周）
+├── 回调组与死锁
+├── 生命周期节点
+├── QoS兼容性测试
+└── rosbag2回归测试
+模块三：大模型测试（第7-9周）
+├── 基础指标：BLEU/ROUGE/BERTScore
+├── 综合评测：MMLU
+├── RAG评测：RAGAS
+└── 工具调用评测 + 压测
+模块四：CI/CD自动化（第10-11周）
+├── DVC数据版本控制
+├── MLflow实验管理
+├── 统一CI管线搭建
+└── Allure报告 + 阈值门禁
+模块五：具身智能测试（第12-16周）
+├── LLM → 中间层 → ROS2
+├── 端到端测试方案
+├── 失败根因自动分析（LLM辅助）
+└── 持续探索中...
+
+---
+
+## 怎么用
+
+1. 先看"适合谁"——确认这个仓库对你有没有用
+2. 翻几篇踩坑笔记——感受一下内容质量和风格
+3. 按模块顺序学——从模块〇开始，循序渐进
+4. 动手跑，别光看——每个demo都自己敲一遍
+5. 记笔记——用自己的话重述一遍，比看十遍教程都管用
+
+---
+
+## 更新计划
+
+- 每周更新1-2篇踩坑笔记
+- 模块五（具身智能测试）持续推进，有进展就更
+- 找到工作后会更新面试复盘和入职后的实战对比
+
+---
+
+## 找我
+
+- 💬 有问题欢迎提 [Issue](https://github.com/zzluogh/ros2-ai-testing-roadmap/issues)
+- 📝 知乎：[@zzluogh](https://www.zhihu.com/people/zzluogh)
+- ⭐ 觉得有用点个Star，每周更新～
