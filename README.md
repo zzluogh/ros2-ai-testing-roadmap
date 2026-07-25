@@ -36,6 +36,9 @@
 
 - [完整学习路线图](./resources/learning-roadmap.md) — 102 天日计划
 - [命令速查表](./resources/commands-cheatsheet.md) — pytest / ros2 / CI 常用命令
+
+以「场景→现象→根因→修复」为主线，附关键教训：
+
 - [样本笔记：Nav2 代价地图](./samples/sample-notes.md) — 模块一
 - [样本笔记：pytest + launch_testing 踩坑](./samples/sample-module2-pytest-ci.md) — 模块二
 - [样本笔记：QoS 静默失败 + 生命周期死锁](./samples/sample-module3-qos-lifecycle.md) — 模块三
